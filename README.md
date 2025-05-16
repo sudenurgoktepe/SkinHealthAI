@@ -112,12 +112,15 @@ Tarayıcıda `http://localhost:8080` adresini açarak sohbet arayüzüne erişeb
 
 ## 📊 Görseller
 
-> Aşağıdaki ekran görüntüleri veya GIF'ler eklenebilir:
-> - Chatbot arayüzü (PyWebIO)
-> - Model geçiş ekranı
-> - Öneri kutuları
-> - Confusion Matrix
-> - Başarı oranı bar grafikleri
+### 🏥 Cilt Hastalığı Asistanı
+![Keras-1](./screenshots/image2.png)
+![Keras-2](./screenshots/image3.png)
+
+### 💬 Karşılama Ekranı
+![Welcome](./screenshots/image1.png)
+
+### 🌸 Genel Cilt Problemi Asistanı
+![BERT-1](./screenshots/image4.png)
 
 ---
 
@@ -139,7 +142,7 @@ Tarayıcıda `http://localhost:8080` adresini açarak sohbet arayüzüne erişeb
 
 🧔 **Sudenur Göktepe**  
 Bilişim Sistemleri Mühendisi ☁️  
-GitHub: [github.com/kullaniciadi](https://github.com/sudenurgoktepe)
+GitHub: [github.com/sudenurgoktepe](https://github.com/sudenurgoktepe)
 
 ---
 
