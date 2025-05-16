@@ -112,12 +112,12 @@ Tarayıcıda `http://localhost:8080` adresini açarak sohbet arayüzüne erişeb
 
 ## 📊 Görseller
 
+### 💬 Karşılama Ekranı
+![Welcome](./screenshots/image1.png)
+
 ### 🏥 Cilt Hastalığı Asistanı
 ![Keras-1](./screenshots/image2.png)
 ![Keras-2](./screenshots/image3.png)
-
-### 💬 Karşılama Ekranı
-![Welcome](./screenshots/image1.png)
 
 ### 🌸 Genel Cilt Problemi Asistanı
 ![BERT-1](./screenshots/image4.png)
