@@ -38,11 +38,11 @@ Her model, Türkçe veri setiyle sıfırdan eğitilmiştir. Kullanıcı dostu Py
 
 ### 2. Türkçeleştirme ve Genişletme
 
-Veri seti aşağıdaki adımlarla dönüştürüldü:
+Veri seti aşağıdaki adımlarla dönüştürülmüştür:
 
 | Yeni Kolon            | Açıklama                                        |
 |------------------------|-------------------------------------------------|
-| `aciklama`             | Orijinal İngilizce metnin Türkçesi              |
+| `aciklama`             | Orijinal İngilizce metnin Gemini ile Türkçeye çevrilmiş hali |
 | `hastalik`             | Hastalık adı (Türkçe)                           |
 | `cilttipi`             | Metne göre uygun cilt tipi                      |
 | `onerilen_urun`        | Hastalığa yönelik önerilen ürünler              |
@@ -50,9 +50,9 @@ Veri seti aşağıdaki adımlarla dönüştürüldü:
 
 #### 👨‍🔬 Uygulanan İşlemler
 
-- `ceviri.py`: İngilizce metinlerin Türkçeye çevrilmesi
-- `csvbuyut.py`: Veri dengeleme & augmentation
-- `kontrol.py`, `eklenti.py`: Manuel içerik düzeltmeleri ve kontrol
+- `ceviri.py`: Google Gemini API kullanılarak metinlerin Türkçeye çevrilmesi
+- `csvbuyut.py`: Veri dengeleme ve artırma işlemleri
+- `kontrol.py`, `eklenti.py`: Manuel içerik kontrolü ve kalite iyileştirmeleri
 
 ---
 
@@ -80,9 +80,16 @@ Cildim pul pul dökülüyor ve yanaklarımda kaşıntılı kızarıklık var.
 
 ### Gereksinimler
 
+Aşağıdaki Python kütüphanelerini yüklemeniz gerekir:
+
 ```bash
-pip install -r requirements.txt
+pip install pywebio pandas numpy scikit-learn matplotlib seaborn \
+tensorflow transformers datasets evaluate 
 ```
+
+> BERT modelleri için: `pip install torch `
+
+---
 
 ### Uygulamayı Başlat
 
@@ -138,10 +145,11 @@ Tarayıcıda `http://localhost:8080` adresini açarak sohbet arayüzüne erişeb
 
 ---
 
-## 👨‍💻 Geliştirici
+## 👩‍💻 Geliştirici
 
-🧔 **Sudenur Göktepe**  
-Bilişim Sistemleri Mühendisi ☁️  
+👩 **Sudenur Göktepe**  
+Bilişim Sistemleri Mühendisi 💡  
+AI & Mobil teknolojilere tutkuyla bağlı bir geliştirici.  
 GitHub: [github.com/sudenurgoktepe](https://github.com/sudenurgoktepe)
 
 ---
