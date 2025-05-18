@@ -6,7 +6,7 @@ CSV_INPUT = "Skin_text_classifier_son.csv"
 CSV_OUTPUT = "Skin_text_classifier_augmented.csv"
 NUM_VARIATIONS = 30
 
-API_KEY = "AIzaSyBkaffB-LrFC238e88ge6ZyECBYzmuM-Q8"
+API_KEY = ""
 
 # Gemini API ayarları
 genai.configure(api_key=API_KEY)
