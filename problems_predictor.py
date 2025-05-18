@@ -3,7 +3,7 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import numpy as np
 import pickle
 
-# 🌡️ Cilt Problemi Modeli
+# Cilt Problemi Modeli
 def load_problem_model():
     model_path = "./bert-problem-model"
     tokenizer = AutoTokenizer.from_pretrained(model_path)
@@ -13,7 +13,7 @@ def load_problem_model():
         label_encoder = pickle.load(f)
     return model, tokenizer, label_encoder
 
-# 🧴 Cilt Tipi Modeli
+# Cilt Tipi Modeli
 def load_ciltbert_model():
     model_path = "./bert-cilt-model"
     tokenizer = AutoTokenizer.from_pretrained(model_path)
@@ -23,7 +23,7 @@ def load_ciltbert_model():
         label_encoder = pickle.load(f)
     return model, tokenizer, label_encoder
 
-# 🔍 Cilt Problemi Tahmin
+# Cilt Problemi Tahmin
 def predict_problem(text, model, tokenizer, label_encoder):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model.to(device)
@@ -37,7 +37,7 @@ def predict_problem(text, model, tokenizer, label_encoder):
         pred_class = torch.argmax(probs, dim=1).item()
         confidence = probs[0][pred_class].item()
 
-    # 🔐 Güvenli dönüşüm
+
     if pred_class >= len(label_encoder.classes_):
         label = "Bilinmeyen"
         confidence = 0.0
@@ -46,7 +46,7 @@ def predict_problem(text, model, tokenizer, label_encoder):
 
     return label, confidence
 
-# 🔍 Cilt Tipi Tahmin
+# Cilt Tipi Tahmin
 def predict_ciltbert(text, model, tokenizer, label_encoder):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model.to(device)
@@ -60,7 +60,7 @@ def predict_ciltbert(text, model, tokenizer, label_encoder):
         pred_class = torch.argmax(probs, dim=1).item()
         confidence = probs[0][pred_class].item()
 
-    # 🔐 Güvenli dönüşüm
+
     if pred_class >= len(label_encoder.classes_):
         label = "Bilinmeyen"
         confidence = 0.0

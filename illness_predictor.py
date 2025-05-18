@@ -5,7 +5,7 @@ import pickle
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
-# HASTALIK MODELİ
+# Hastalık Modeli
 def load_illness_model():
     model = load_model('hastalik_model_best_bilstm.keras')  # ✅ Güncel ve doğru
     with open('tokenizer_hastalik.pkl', 'rb') as f:
@@ -23,7 +23,7 @@ def predict_illness(text, model, tokenizer, label_encoder):
     class_name = label_encoder.inverse_transform([pred_class])[0]
     return class_name, confidence
 
-# CİLT TİPİ MODELİ
+# Cilt Tipi Modeli
 def load_cilt_model():
     model = load_model('cilttipi_model_best_bilstm.keras')  # ✅ Güncel ve doğru
     with open('tokenizer_cilt.pkl', 'rb') as f:

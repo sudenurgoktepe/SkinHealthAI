@@ -8,7 +8,6 @@ import pandas as pd
 df_keras = pd.read_csv("Skin_text_classifier.csv")
 df_bert = pd.read_csv("Skin.csv")
 
-# 🌸 Öneri fonksiyonları
 def öneri_keras(h, c):
     try:
         o1 = df_keras[df_keras["hastalik"] == h]["onerilen_urun"].values[0]
@@ -21,7 +20,7 @@ def öneri_keras(h, c):
     return o1, o2
 
 def öneri_bert(p, c):
-    # Filtre: hem problem hem cilt tipi eşleşmeli
+
     filtre = df_bert[
         (df_bert['cilt_problemi'] == p) &
         (df_bert['cilttipi'] == c)
@@ -31,7 +30,7 @@ def öneri_bert(p, c):
     else:
         return "❌ Bu cilt tipi ve problem için öneri bulunamadı"
 
-# ✨ Mesaj stili
+
 def user_msg(msg):
     return f"""<div style='background:#ffe0f0;padding:10px;border-radius:10px;max-width:70%;margin-bottom:8px;box-shadow:1px 1px 5px #ccc;'>👤 <b>Sen:</b><br>{msg}</div>"""
 
@@ -43,7 +42,7 @@ def urun_kartlari(urunler):
     <b>🎁 Önerilen Ürünler:</b><br>{"<br>".join(f"• {u}" for u in urunler if u != "Yok")}
     </div>"""
 
-# 💬 KERAS tabanlı chatbot
+# KERAS tabanlı chatbot
 def keras_chat():
     clear()
     put_html("<h2 style='text-align:center;color:#8b5dff;'>🩺 Cilt Hastalığı Asistanı</h2>")
@@ -71,11 +70,11 @@ def keras_chat():
             put_html(urun_kartlari([o1, o2]))
             put_html("<div style='clear:both;'></div><hr>")
 
-        # 🔁 Geçiş butonu
+    
         if actions(label="Modeli değiştirmek ister misiniz?", buttons=["🌸 Genel Problemlere Geç", "Devam"]) == "🌸 Genel Problemlere Geç":
             return bert_chat()
 
-# 💬 BERT tabanlı chatbot
+# BERT tabanlı chatbot
 def bert_chat():
     clear()
     put_html("<h2 style='text-align:center;color:#ff5da2;'>🌸 Genel Cilt Problemi Asistanı</h2>")
@@ -112,7 +111,6 @@ def bert_chat():
         put_html(f"<div style='color:red;'>💥 Bir hata oluştu: {str(e)}</div>")
 
 
-# 🧿 Ana seçim ekranı
 def ana_menu():
     put_html("""
     <style>
@@ -171,7 +169,5 @@ def ana_menu():
     put_html("<div class='footer'>💡 Bu araç bir tıbbi tanı sistemi değildir. Lütfen bir dermatoloğa danışın.</div>")
 
 
-
-# 🚀 Başlat
 if __name__ == "__main__":
     start_server(ana_menu, port=8080)

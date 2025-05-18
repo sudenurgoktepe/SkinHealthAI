@@ -1,14 +1,14 @@
 import pandas as pd
 import google.generativeai as genai
 
-# === AYARLAR ===
+# Ayarlar
 CSV_INPUT = "Skin_text_classifier_son.csv"
 CSV_OUTPUT = "Skin_text_classifier_augmented.csv"
 NUM_VARIATIONS = 30
 
 API_KEY = "AIzaSyBkaffB-LrFC238e88ge6ZyECBYzmuM-Q8"
 
-# === Gemini API Ayarla ===
+# Gemini API ayarları
 genai.configure(api_key=API_KEY)
 model = genai.GenerativeModel('models/gemini-1.5-pro')
 

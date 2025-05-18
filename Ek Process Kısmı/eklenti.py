@@ -67,10 +67,8 @@ cilt_tipi_gundelik_mapping = {
     'kuru': 'Seramid nemlendirici, Lipid bariyer krem, Yağ bazlı temizleyici'
 }
 
-# Yeni kolon ekle
 df['cilt_onerilen_urun'] = df['cilttipi'].apply(lambda x: cilt_tipi_gundelik_mapping.get(x) if x in cilt_tipi_gundelik_mapping else None)
 
-# Kaydet
 df.to_csv('Skin_text_classifier_son.csv', index=False, encoding='utf-8-sig')
 
 print("🎯 Cilt tipine göre günlük ürün tavsiyesi eklendi (tum olanlar boş), dosyan hazır: Skin_text_classifier_full_plus.csv")
