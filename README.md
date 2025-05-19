@@ -5,8 +5,13 @@
 ---
 
 ## 🧠 Proje Hakkında
+Bu proje, cilt sorunlarını analiz ederek hem **teşhis** hem de **ürün önerisi** sunan, yapay zekâ destekli interaktif bir Python uygulamasıdır. Kullanıcılar, doğal bir şekilde semptomlarını serbest metin olarak ifade ederler. Sistem, bu metni analiz ederek ciltle ilgili olası problemleri ya da hastalıkları tahmin eder ve ardından uygun ürün önerilerinde bulunur.
 
-Bu proje, cilt sorunlarını analiz ederek hem **teşhis** hem de **ürün önerisi** sunan interaktif bir Python uygulamasıdır. Kullanıcılar serbest metin şeklinde semptomlarını yazar, sistem ise iki farklı NLP modeliyle analiz yaparak cilt tipi, cilt hastalığı veya problemi tahmin eder.
+Arka planda çalışan iki farklı NLP modeli sayesinde sistem; hem **cilt hastalıklarını** (örneğin egzama, akne, dermatit) hem de **genel cilt problemlerini** (örneğin kuruluk, pullanma, yağlanma) başarıyla ayırt edebilir. Ayrıca her tahminle birlikte kullanıcının **cilt tipi** (yağlı, kuru, karma, hassas vb.) de belirlenir.
+
+Uygulama sadece teşhisle kalmaz; aynı zamanda tahmin edilen hastalık veya probleme yönelik **cilt bakımı ürünlerini** kullanıcıya önererek, bilgilendirici ve yönlendirici bir deneyim sunar. Bu öneriler, veri setinde yer alan ürün tavsiyelerinden türetilmiştir.
+
+Kullanıcı dostu bir PyWebIO arayüzü ile çalışan sistem, sohbet tarzında etkileşimli bir deneyim sunar. Model seçim ekranı sayesinde kullanıcı, BERT veya Keras tabanlı analizi tercih ederek farklı tahmin motorlarını deneyimleyebilir.
 
 ### 🔍 Çift Modelli Mimari
 
@@ -27,6 +32,24 @@ Her model, Türkçe veri setiyle sıfırdan eğitilmiştir. Kullanıcı dostu Py
 - 📊 Sınıf bazlı doğruluk grafikleri ve confusion matrix’ler
 - 🎨 CSS destekli hoş bir arayüz (chat baloncukları, ürün kutuları, emoji desteği)
 - 🔐 Pickle ile kayıtlı `tokenizer`, `LabelEncoder`, `model` dosyaları
+
+---
+
+---
+
+## 📁 Model Dosyaları Hakkında
+
+> 🔔 **Not:** Cilt hastalıklarını tahmin eden Keras modeli (`model_keras`) ve cilt problemlerini tahmin eden BERT modeli (`bert-problem-model`) dosya boyutları nedeniyle bu GitHub reposuna dahil edilmemiştir.
+
+Bu modellerin çalıştırılabilmesi için:
+
+- `app.py` dosyası çalıştırıldığında, modeller veri seti ile **sıfırdan** eğitilecek şekilde yapılandırılmıştır.
+- Eğitim süreci tamamlandıktan sonra:
+  - Keras modeli `.h5` formatında,
+  - BERT modeli ise `./bert-problem-model/` klasörüne **otomatik olarak kaydedilecektir**.
+- `tokenizer`, `LabelEncoder` gibi yardımcı dosyalar da aynı şekilde pickle ile kaydedilir.
+
+🔁 Böylece proje, ilk çalıştırmadan sonra **tamamen yerel** olarak kullanılabilir hale gelir.
 
 ---
 
