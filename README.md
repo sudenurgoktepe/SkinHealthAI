@@ -1,6 +1,6 @@
-# 💖 Cilt Sağlığı Asistanı - AI Destekli Chatbot
+# Cilt Sağlığı Asistanı - AI Destekli Chatbot
 
-> Türkçe NLP destekli, yapay zekâ tabanlı bir cilt hastalığı ve cilt problemi tahmin uygulaması 🧠 + 🎁 öneri motoru + 💬 interaktif chatbot arayüzü.
+> Türkçe NLP destekli, yapay zekâ tabanlı bir cilt hastalığı ve cilt problemi tahmin uygulaması  + öneri motoru + interaktif chatbot arayüzü.
 
 ---
 
@@ -137,20 +137,6 @@ Tarayıcıda `http://localhost:8080` adresini açarak sohbet arayüzüne erişeb
 ### 💧 Cilt Tipi Modelleri
 - BERT ve BiLSTM için ayrı ayrı eğitildi
 - Her sınıf için %100’e yakın doğruluk oranları elde edildi
-
----
-
-## 📊 Görseller
-
-### 💬 Karşılama Ekranı
-![Welcome](./screenshots/image1.png)
-
-### 🏥 Cilt Hastalığı Asistanı
-![Keras-1](./screenshots/image2.png)
-![Keras-2](./screenshots/image3.png)
-
-### 🌸 Genel Cilt Problemi Asistanı
-![BERT-1](./screenshots/image4.png)
 
 ---
 
